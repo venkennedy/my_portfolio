@@ -19,7 +19,7 @@ section { padding: 96px 0; border-bottom: 1px solid var(--line); }
 .section-lede { color: var(--muted); max-width: 58ch; margin-bottom: 52px; }
 
 /* header — pill nav */
-.site-header { position: sticky; top: env(safe-area-inset-top,0px); z-index: 30; padding: 20px 0; background: var(--bg); }
+.site-header { position: sticky; top: env(safe-area-inset-top,0px); z-index: 30; padding: 20px 0; background: var(--burgundy); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .id-block { display: flex; flex-direction: column; line-height: 1.2; }
 .id-block a { text-decoration: none; }
@@ -51,6 +51,7 @@ section { padding: 96px 0; border-bottom: 1px solid var(--line); }
 .scroll-cue { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.85rem; margin-top: 60px; }
 .scroll-cue svg { display: block; }
 .cert-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 44px; }
+.cert-row .chip { color: var(--garnet); border-color: var(--burgundy); }
 .chip { border: 1px solid var(--line); padding: 5px 13px; border-radius: 999px; font-size: 0.85rem; color: var(--muted); }
 
 /* window-chrome card, used for projects + labs */
@@ -92,6 +93,7 @@ details[open] .lab-plus { transform: rotate(45deg); }
 
 /* folder grid on labsetc.html */
 .folder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 28px; }
+.labs-banner { width: 100%; max-height: 340px; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); margin-bottom: 44px; display: block; }
 .folder-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: var(--ink); padding: 20px 10px; border-radius: 14px; transition: background .15s ease, transform .15s ease; }
 .folder-card:hover { background: var(--surface); transform: translateY(-3px); }
 .folder-icon { width: 84px; height: 68px; display: block; margin-bottom: 14px; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35)); }
@@ -141,6 +143,7 @@ footer { padding: 30px 0 48px; color: var(--muted); font-size: 0.88rem; }
 .resume-paper h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: 0.01em; color: #141313; margin: 0; }
 .rp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; border-bottom: 2px solid #1C1B1B; padding-bottom: 16px; margin-bottom: 22px; }
 .rp-title { font-size: 1rem; color: #6B6664; font-weight: 500; margin-top: 4px; }
+.rp-cert-line { font-size: 0.82rem; color: #B5842A; font-weight: 600; margin-top: 3px; }
 .rp-contact { text-align: right; font-size: 0.85rem; color: #4A4644; line-height: 1.7; white-space: nowrap; }
 .rp-section { margin-bottom: 22px; }
 .rp-section h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B5842A; border-bottom: 1px solid #E4E1DD; padding-bottom: 5px; margin-bottom: 12px; }
