@@ -93,7 +93,11 @@ details[open] .lab-plus { transform: rotate(45deg); }
 
 /* folder grid on labsetc.html */
 .folder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 28px; }
-.labs-banner { width: 100%; max-height: 340px; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); margin-bottom: 44px; display: block; }
+.labs-hero { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 44px; align-items: center; margin-bottom: 56px; }
+.labs-hero-img { aspect-ratio: 4/3; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+.labs-hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.labs-hero-text .section-title { margin-bottom: 16px; }
+@media (max-width: 860px) { .labs-hero { grid-template-columns: 1fr; } }
 .folder-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: var(--ink); padding: 20px 10px; border-radius: 14px; transition: background .15s ease, transform .15s ease; }
 .folder-card:hover { background: var(--surface); transform: translateY(-3px); }
 .folder-icon { width: 84px; height: 68px; display: block; margin-bottom: 14px; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35)); }
