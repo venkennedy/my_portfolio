@@ -168,19 +168,25 @@ function renderContact() {
   });
 }
 
-/* Folder grid on labsetc.html */
+/* Folder grid on labsetc.html — most-populated folder first */
 function renderFolderGrid(manifest) {
   const grid = document.getElementById("folder-grid");
   if (!grid) return;
-  grid.innerHTML = LABS.map(lab => {
-    const count = manifest ? (manifest[lab.slug] || []).length : null;
-    const countLabel = count === null ? "" : count ? `${count} write-up${count > 1 ? "s" : ""}` : "Coming soon";
+  const withCounts = LABS.map(lab => ({
+    lab,
+    count: manifest ? (manifest[lab.slug] || []).length : 0
+  }));
+  withCounts.sort((a, b) => b.count - a.count);
+
+  grid.innerHTML = withCounts.map(({ lab, count }) => {
+    const countLabel = manifest === null ? "" : count ? `${count} write-up${count > 1 ? "s" : ""}` : "Coming soon";
     return `
     <a class="folder-card" href="${esc(lab.page)}">
       <span class="folder-icon" aria-hidden="true">
-        <svg viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 8a4 4 0 0 1 4-4h14l6 6h32a4 4 0 0 1 4 4v30a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z" fill="var(--surface)" stroke="var(--garnet)" stroke-width="2"/>
-          <path d="M2 16h60" stroke="var(--line)" stroke-width="2"/>
+        <svg viewBox="0 0 64 52" xmlns="http://www.w3.org/2000/svg">
+          <rect x="16" y="4" width="30" height="26" rx="2" fill="#FFFFFF" stroke="#D8D8D8" stroke-width="1"/>
+          <path d="M2 14a4 4 0 0 1 4-4h15l6 6h31a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V14Z" fill="#F6BE3F"/>
+          <path d="M2 22h60v20a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V22Z" fill="#F0AC1F"/>
         </svg>
       </span>
       <span class="folder-label">${esc(lab.title)}</span>

@@ -136,6 +136,31 @@ pre.term { margin: 0; background: #0A0808; color: #E4D9D6; font-family: "JetBrai
 
 footer { padding: 30px 0 48px; color: var(--muted); font-size: 0.88rem; }
 
+/* resume — white paper, styled to read like a PDF, not a download */
+.resume-paper { background: #FFFFFF; color: #1C1B1B; max-width: 780px; margin: 0 auto; padding: 56px 58px 64px; border-radius: 3px; box-shadow: 0 30px 70px rgba(0,0,0,0.5), 0 2px 0 rgba(0,0,0,0.04); font-family: "IBM Plex Sans", system-ui, sans-serif; user-select: text; }
+.resume-paper h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: 0.01em; color: #141313; margin: 0; }
+.rp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; border-bottom: 2px solid #1C1B1B; padding-bottom: 16px; margin-bottom: 22px; }
+.rp-title { font-size: 1rem; color: #6B6664; font-weight: 500; margin-top: 4px; }
+.rp-contact { text-align: right; font-size: 0.85rem; color: #4A4644; line-height: 1.7; white-space: nowrap; }
+.rp-section { margin-bottom: 22px; }
+.rp-section h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B5842A; border-bottom: 1px solid #E4E1DD; padding-bottom: 5px; margin-bottom: 12px; }
+.resume-paper p { color: #322F2D; font-size: 0.93rem; line-height: 1.65; margin: 0 0 8px; }
+.resume-paper .rp-tight { margin: 0 0 4px; font-size: 0.88rem; color: #4A4644; }
+.resume-paper ul { list-style: disc; padding-left: 20px; margin: 6px 0 0; }
+.resume-paper li { color: #322F2D; font-size: 0.9rem; line-height: 1.6; margin-bottom: 5px; }
+.rp-role { margin-bottom: 16px; }
+.rp-role:last-child { margin-bottom: 0; }
+.rp-role-head { font-size: 0.94rem; color: #141313; }
+.rp-role-head strong { font-weight: 700; }
+.rp-role-sub { font-style: italic; color: #6B6664; font-size: 0.87rem; margin: 1px 0 6px; }
+.rp-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+@media (max-width: 700px) {
+  .resume-paper { padding: 32px 22px 40px; }
+  .rp-header { flex-direction: column; }
+  .rp-contact { text-align: left; }
+  .rp-two-col { grid-template-columns: 1fr; }
+}
+
 @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto;} .lab-plus{transition:none;} }
 @media (max-width: 860px) {
   section { padding: 64px 0; }
