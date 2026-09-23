@@ -3,7 +3,7 @@ const PHOTO = "IMG_7747.JPG";   // paste an image path (e.g. "photo.jpg", placed
 
 const CONTACT = {
   email:    "kennedyvenoliah2@gmail.com",
-  linkedin: "https://www.linkedin.com/in/venoliahkennedy-676384233",
+  linkedin: "https://www.linkedin.com/in/venoliah-kennedy-676384233/",
   github:   "https://github.com/venkennedy",
   medium:   "https://medium.com/@kennedyvenoliah2",
   leetcode: "https://leetcode.com/u/kennedyvenoliah2/"
