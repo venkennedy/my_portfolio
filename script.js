@@ -35,7 +35,7 @@ const LABS = [
   {
     slug: "seedlabs",
     page: "seedlabs.html",
-    folder: "Seed_Labs",
+    folder: "Seed_labs",
     title: "SEED Labs",
     platform: "SEED Labs",
     category: "Systems & security labs",
@@ -98,7 +98,8 @@ const LABS = [
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 // Filename without its extension, used as the display label for each file row.
-const fileLabel = filename => filename.replace(/\.pdf$/i, "");
+const fileLabel = filename => filename.replace(/\.(pdf|docx)$/i, "");
+const fileBadge = filename => /\.docx$/i.test(filename) ? "DOC" : "PDF";
 
 async function loadManifest() {
   try {
@@ -172,7 +173,7 @@ function renderFileList(lab, manifest) {
   const rows = files.map(f => {
     const href = `writeups/${encodeURIComponent(lab.folder)}/${encodeURIComponent(f)}`;
     return `<a class="file-row" href="${href}" target="_blank" rel="noopener">
-      <span class="file-badge">PDF</span>
+      <span class="file-badge">${fileBadge(f)}</span>
       <span class="file-name">${esc(fileLabel(f))}</span>
     </a>`;
   }).join("");
