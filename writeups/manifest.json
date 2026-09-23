@@ -1,0 +1,18 @@
+{
+  "letsdefend": [
+    "Impersonating Domain MX Record Change Detected - EventID 304.pdf",
+    "Lumma Stealer (Phishing) -EventID 316.pdf",
+    "MALWARE - EventID 44.pdf",
+    "Phishing Mail - EvendID 59.pdf",
+    "PRIVILEGE ESCALATION - EventID 313.pdf",
+    "RANSOMWARE DETECTED - EventID 92.pdf",
+    "RDP Brute Force Detected - EventID 234.pdf",
+    "Windows OLE Zero - EventID 314.pdf"
+  ],
+  "seedlabs": [
+    "Information Systems Security and Design groups - ICS 4A, B, C - Group C.pdf"
+  ],
+  "splunk": [],
+  "huntress": [],
+  "leetcode": []
+}
