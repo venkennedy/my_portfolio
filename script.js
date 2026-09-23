@@ -182,30 +182,14 @@ function renderFileList(lab, manifest) {
 
 /* Detail content used on each category page */
 function labDetailHTML(lab, manifest) {
-  const field = (label, val, hint) =>
-    `<div><h4>${label}</h4>` + (val ? `<p>${esc(val)}</p>` : `<p class="pending">${hint}</p>`) + `</div>`;
-  const filled = lab.problem && lab.approach && lab.lessons;
-  const tools = lab.tools.length
-    ? `<div class="chips" style="display:flex;flex-wrap:wrap;gap:7px;">${lab.tools.map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div>`
-    : `<p class="pending">Tools to be added.</p>`;
-  const shots = lab.shots.length
-    ? `<div class="shots">${lab.shots.map(s => `<img src="${esc(s.src)}" alt="${esc(s.caption || "Lab screenshot")}">`).join("")}</div>`
-    : `<div class="shot-empty">Screenshots to be added.</div>`;
-  const term = lab.terminal ? `<div class="full"><h4>Key output</h4><pre class="term">${esc(lab.terminal)}</pre></div>` : "";
   const mediumLink = lab.mediumUrl ? `<div class="full"><a class="plink" href="${esc(lab.mediumUrl)}" target="_blank" rel="noopener">Read on Medium →</a></div>` : "";
 
   return `
     <div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">${esc(lab.platform.toLowerCase())} / write-ups</span></div>
     <div class="win-body">
-      <h3>${esc(lab.title)}${filled ? "" : '<span class="badge">In progress</span>'}</h3>
+      <h3>${esc(lab.title)}</h3>
       <div class="meta">${esc(lab.platform)} — ${esc(lab.category)}</div>
       <div class="lab-grid">
-        ${field("Problem statement", lab.problem, "To be added.")}
-        ${field("Approach", lab.approach, "To be added.")}
-        <div><h4>Tools used</h4>${tools}</div>
-        ${field("Key lessons", lab.lessons, "To be added.")}
-        ${term}
-        <div class="full"><h4>Screenshots</h4>${shots}</div>
         ${renderFileList(lab, manifest)}
         ${mediumLink}
       </div>
