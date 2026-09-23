@@ -3,9 +3,8 @@ const PHOTO = "IMG_7747.JPG";   // paste an image path (e.g. "photo.jpg", placed
 
 const CONTACT = {
   email:    "kennedyvenoliah2@gmail.com",
-  phone:    "",
   linkedin: "https://www.linkedin.com/in/venoliahkennedy-676384233",
-  github:   "",
+  github:   "https://github.com/venkennedy",
   medium:   "https://medium.com/@kennedyvenoliah2",
   leetcode: "https://leetcode.com/u/kennedyvenoliah2/"
 };
@@ -78,6 +77,36 @@ const LABS = [
     mediumUrl: ""
   },
   {
+    slug: "hackthebox",
+    page: "hackthebox.html",
+    folder: "HackTheBox_labs",
+    title: "Hack The Box",
+    platform: "Hack The Box",
+    category: "Hands-on penetration testing labs",
+    problem: "",
+    approach: "",
+    tools: [],
+    terminal: "",
+    shots: [],
+    lessons: "",
+    mediumUrl: ""
+  },
+  {
+    slug: "tryhackme",
+    page: "tryhackme.html",
+    folder: "TryHackMe_labs",
+    title: "TryHackMe",
+    platform: "TryHackMe",
+    category: "Guided security challenges",
+    problem: "",
+    approach: "",
+    tools: [],
+    terminal: "",
+    shots: [],
+    lessons: "",
+    mediumUrl: ""
+  },
+  {
     slug: "leetcode",
     page: "leetcode.html",
     folder: "leetCode",
@@ -125,7 +154,6 @@ function renderContact() {
   if (!cl) return;
   const rows = [
     ["Email", CONTACT.email, v => "mailto:" + v],
-    ["Phone", CONTACT.phone, v => "tel:" + v.replace(/\s+/g, "")],
     ["LinkedIn", CONTACT.linkedin, v => v],
     ["Medium", CONTACT.medium, v => v],
     ["LeetCode", CONTACT.leetcode, v => v],
@@ -168,7 +196,7 @@ function renderFileList(lab, manifest) {
   }
   const files = manifest[lab.slug] || [];
   if (!files.length) {
-    return `<div class="full"><h4>Write-ups</h4><p class="pending">No PDFs in writeups/${esc(lab.folder)} yet — drop one in and push to see it here.</p></div>`;
+    return `<div class="full"><h4>Write-ups</h4><p class="pending">No write-ups in writeups/${esc(lab.folder)} yet.</p></div>`;
   }
   const rows = files.map(f => {
     const href = `writeups/${encodeURIComponent(lab.folder)}/${encodeURIComponent(f)}`;

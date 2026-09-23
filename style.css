@@ -76,7 +76,7 @@ details.lab summary .win-bar { display: flex; cursor: pointer; }
 .lab-summary-inner { display: flex; align-items: center; justify-content: space-between; flex: 1; gap: 12px; }
 .lab-plus { color: var(--muted); font-size: 1.1rem; transition: transform .2s ease; flex-shrink: 0; }
 details[open] .lab-plus { transform: rotate(45deg); }
-.lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 40px; }
+.lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 40px; margin-top: 32px; }
 .lab-grid h4 { font-family: "Bricolage Grotesque", sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
 .lab-grid .full { grid-column: 1/-1; }
 .pending { color: var(--muted); font-style: italic; }
